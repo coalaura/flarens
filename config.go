@@ -8,10 +8,9 @@ import (
 )
 
 type Config struct {
-	Key     string `yaml:"key"`
-	Account string `yaml:"account"`
-	Zone    string `yaml:"zone"`
-	Record  string `yaml:"record"`
+	Key    string `yaml:"key"`
+	Zone   string `yaml:"zone"`
+	Record string `yaml:"record"`
 }
 
 func LoadConfig() (*Config, error) {
@@ -31,8 +30,6 @@ func LoadConfig() (*Config, error) {
 
 	if cfg.Key == "" {
 		return nil, errors.New("missing key")
-	} else if cfg.Account == "" {
-		return nil, errors.New("missing account")
 	} else if cfg.Zone == "" {
 		return nil, errors.New("missing zone")
 	} else if cfg.Record == "" {
